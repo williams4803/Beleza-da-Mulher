@@ -1,0 +1,15 @@
+.sobre {
+  background: white;
+  text-align: center;
+}
+
+.sobre h2 {
+  color: #c95c86;
+  margin-bottom: 20px;
+}
+
+.sobre p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}

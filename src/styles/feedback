@@ -1,0 +1,37 @@
+.feedback{
+  padding:80px 10%;
+  background:#fff;
+  text-align:center;
+}
+
+.feedback h2{
+  color:#c95c86;
+  margin-bottom:40px;
+}
+
+.feedback-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.feedback-card{
+  background:#fff7fa;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+
+.feedback-card:hover{
+  transform:translateY(-8px);
+}
+
+.feedback-card p{
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.feedback-card h4{
+  color:#d4af37;
+}

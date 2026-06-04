@@ -1,0 +1,39 @@
+.ofertas {
+  text-align: center;
+}
+
+.ofertas h2 {
+  color: #c95c86;
+  margin-bottom: 40px;
+}
+
+.oferta-card {
+  background: white;
+  max-width: 500px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.oferta-card h3 {
+  font-size: 50px;
+  color: #d4af37;
+}
+
+.oferta-card p {
+  margin: 20px 0;
+}
+
+.oferta-card button,
+.oferta-card .oferta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  border: none;
+  background: #c95c86;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+

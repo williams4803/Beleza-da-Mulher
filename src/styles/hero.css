@@ -1,0 +1,27 @@
+.hero{
+  height:90vh;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(to right,#ffdce6,#fff);
+}
+
+.hero-content h2{
+  font-size:60px;
+  color:#c95c86;
+}
+
+.hero-content p{
+  margin:20px 0;
+  max-width:500px;
+  line-height:1.6;
+}
+
+.hero-content button{
+  padding:15px 30px;
+  border:none;
+  background:#d4af37;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+}
