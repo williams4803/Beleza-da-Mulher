@@ -16,7 +16,14 @@
   line-height:1.6;
 }
 
-.hero-content button{
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  margin-top:20px;
+}
+
+.hero-button{
+  display:inline-block;
   padding:15px 30px;
   border:none;
   background:#d4af37;
@@ -24,4 +31,20 @@
   border-radius:10px;
   cursor:pointer;
   font-size:16px;
+  text-decoration:none;
+  transition:background 0.3s;
+}
+
+.hero-button:hover{
+  background:#c99a2e;
+}
+
+.hero-button-secondary{
+  background:#c95c86;
+  border:2px solid #c95c86;
+}
+
+.hero-button-secondary:hover{
+  background:#a84770;
+  border-color:#a84770;
 }
