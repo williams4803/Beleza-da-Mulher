@@ -13,7 +13,7 @@ function Hero() {
           skincare e autoestima feminina.
         </p>
 
-        <button>Comprar Agora</button>
+        <a className="hero-button" href="/checkout.html">Comprar Agora</a>
 
       </div>
 
