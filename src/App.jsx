@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Produtos from "./components/Produtos";
@@ -12,6 +13,26 @@ import "./styles/global.css";
 import "./styles/responsive.css";
 
 function App() {
+  const [reviews, setReviews] = useState([
+    {
+      nome: "Ana Souza",
+      mensagem:
+        "Produtos maravilhosos e entrega super rápida. Com certeza comprarei novamente.",
+    },
+    {
+      nome: "Juliana Lima",
+      mensagem:
+        "A qualidade dos produtos superou minhas expectativas. Atendimento excelente.",
+    },
+    {
+      nome: "Camila Oliveira",
+      mensagem: "Site bonito, fácil de usar e produtos incríveis.",
+    },
+  ]);
+
+  const handleAddReview = (review) => {
+    setReviews((prev) => [review, ...prev]);
+  };
   return (
     <>
       <Header />
@@ -19,8 +40,8 @@ function App() {
       <Produtos />
        <Sobre />
       <Ofertas />
-      <Feedback />
-      <Avaliacao />
+      <Feedback reviews={reviews} />
+      <Avaliacao onAddReview={handleAddReview} />
       <Whatsapp />
       <Footer />
     </>

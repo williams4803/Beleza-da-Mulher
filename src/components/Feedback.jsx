@@ -1,6 +1,6 @@
 import "../styles/feedback.css";
 
-function Feedback() {
+function Feedback({ reviews = [] }) {
   return (
     <section className="feedback">
 
@@ -8,28 +8,12 @@ function Feedback() {
 
       <div className="feedback-container">
 
-        <div className="feedback-card">
-          <p>
-            "Produtos maravilhosos e entrega super rápida.
-            Com certeza comprarei novamente."
-          </p>
-          <h4>Ana Souza</h4>
-        </div>
-
-        <div className="feedback-card">
-          <p>
-            "A qualidade dos produtos superou minhas expectativas.
-            Atendimento excelente."
-          </p>
-          <h4>Juliana Lima</h4>
-        </div>
-
-        <div className="feedback-card">
-          <p>
-            "Site bonito, fácil de usar e produtos incríveis."
-          </p>
-          <h4>Camila Oliveira</h4>
-        </div>
+        {reviews.map((r, idx) => (
+          <div className="feedback-card" key={idx}>
+            <p>{`"${r.mensagem}"`}</p>
+            <h4>{r.nome}</h4>
+          </div>
+        ))}
 
       </div>
 

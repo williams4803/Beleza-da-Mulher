@@ -1,12 +1,17 @@
 import { useState } from "react";
 import "../styles/avaliação.css";
 
-function Avaliacao() {
+function Avaliacao({ onAddReview }) {
   const [nome, setNome] = useState("");
   const [mensagem, setMensagem] = useState("");
 
   const enviarAvaliacao = (e) => {
     e.preventDefault();
+
+    const nova = { nome: nome || "Anônimo", mensagem };
+    if (typeof onAddReview === "function") {
+      onAddReview(nova);
+    }
 
     alert("Obrigado pela sua avaliação!");
 
