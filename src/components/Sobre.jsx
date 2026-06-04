@@ -2,7 +2,7 @@ import "../styles/sobre.css";
 
 function Sobre() {
   return (
-    <section className="sobre">
+    <section id="sobre" className="sobre">
       <div className="sobre-text">
         <h2>Sobre Nossa Loja</h2>
         <p>

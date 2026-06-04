@@ -9,6 +9,7 @@ function Header() {
       <nav>
         <a href="#inicio">Início</a>
         <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre Mim</a>
         <a href="#ofertas">Ofertas</a>
         <a href="#contato">Contato</a>
       </nav>
