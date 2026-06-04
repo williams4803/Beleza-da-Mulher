@@ -20,6 +20,9 @@
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 200ms ease, opacity 200ms ease;
 }
 
 .feedback-card p {
@@ -31,4 +34,53 @@
 .feedback-card h4 {
   color: #333;
   font-weight: 700;
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.delete-oldest {
+  background: transparent;
+  border: 1px solid #e07a9c;
+  color: #c95c86;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-oldest:hover {
+  background: #f9e7ef;
+}
+
+.delete-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f8d7da;
+  color: #a33;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-card:hover {
+  background: #f1b9be;
+}
+
+.feedback-date {
+  display: block;
+  margin-top: 10px;
+  color: #888;
+  font-size: 0.85rem;
 }

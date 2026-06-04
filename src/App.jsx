@@ -19,17 +19,20 @@ function App() {
       mensagem:
         "Produtos maravilhosos e entrega super rápida. Com certeza comprarei novamente.",
       createdAt: new Date().toISOString(),
+      id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
     },
     {
       nome: "Juliana Lima",
       mensagem:
         "A qualidade dos produtos superou minhas expectativas. Atendimento excelente.",
       createdAt: new Date().toISOString(),
+      id: `${Date.now() + 1}-${Math.random().toString(36).slice(2)}`,
     },
     {
       nome: "Camila Oliveira",
       mensagem: "Site bonito, fácil de usar e produtos incríveis.",
       createdAt: new Date().toISOString(),
+      id: `${Date.now() + 2}-${Math.random().toString(36).slice(2)}`,
     },
   ]);
 
@@ -37,6 +40,7 @@ function App() {
     const reviewWithDate = {
       ...review,
       createdAt: review.createdAt || new Date().toISOString(),
+      id: review.id || `${Date.now()}-${Math.random().toString(36).slice(2)}`,
     };
 
     setReviews((prev) => [reviewWithDate, ...prev]);

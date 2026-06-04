@@ -31,8 +31,8 @@ function Feedback({ reviews = [], onDeleteOldest, onDeleteReview }) {
         {reviews.length === 0 && <p>Sem avaliações ainda.</p>}
 
         {reviews.map((r) => (
-          <div className="feedback-card" key={r.createdAt}>
-            <button className="delete-card" onClick={() => handleDeleteCard(r.createdAt)}>
+          <div className="feedback-card" key={r.id}>
+            <button className="delete-card" onClick={() => handleDeleteCard(r.id)}>
               ✕
             </button>
             <p>{`"${r.mensagem}"`}</p>
