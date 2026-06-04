@@ -48,6 +48,10 @@ function App() {
       return prev.slice(0, prev.length - 1);
     });
   };
+
+  const handleDeleteReview = (id) => {
+    setReviews((prev) => prev.filter((r) => r.createdAt !== id));
+  };
   return (
     <>
       <Header />
@@ -55,7 +59,7 @@ function App() {
       <Produtos />
        <Sobre />
       <Ofertas />
-      <Feedback reviews={reviews} onDeleteOldest={handleDeleteOldest} />
+      <Feedback reviews={reviews} onDeleteOldest={handleDeleteOldest} onDeleteReview={handleDeleteReview} />
       <Avaliacao onAddReview={handleAddReview} />
       <Whatsapp />
       <Footer />
