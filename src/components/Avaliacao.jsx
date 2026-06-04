@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/avaliacao.css";
+import "../styles/avaliação.css";
 
 function Avaliacao() {
   const [nome, setNome] = useState("");
