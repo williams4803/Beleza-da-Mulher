@@ -54,7 +54,7 @@ function App() {
   };
 
   const handleDeleteReview = (id) => {
-    setReviews((prev) => prev.filter((r) => r.createdAt !== id));
+    setReviews((prev) => prev.filter((r) => r.id !== id));
   };
   return (
     <>
