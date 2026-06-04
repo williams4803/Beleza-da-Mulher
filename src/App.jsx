@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Produtos from "./components/Produtos";
@@ -13,6 +13,18 @@ import "./styles/global.css";
 import "./styles/responsive.css";
 
 const generateId = () => `${Math.random().toString(36).slice(2)}`;
+
+const loadReviewsFromStorage = () => {
+  try {
+    const stored = localStorage.getItem("beleza_avaliacoes");
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (error) {
+    console.error("Erro ao carregar avaliações:", error);
+  }
+  return initialReviews;
+};
 
 const initialReviews = [
   {
@@ -38,7 +50,15 @@ const initialReviews = [
 ];
 
 function App() {
-  const [reviews, setReviews] = useState(initialReviews);
+  const [reviews, setReviews] = useState(() => loadReviewsFromStorage());
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("beleza_avaliacoes", JSON.stringify(reviews));
+    } catch (error) {
+      console.error("Erro ao salvar avaliações:", error);
+    }
+  }, [reviews]);
 
   const handleAddReview = (review) => {
     const reviewWithDate = {
