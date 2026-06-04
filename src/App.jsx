@@ -18,20 +18,28 @@ function App() {
       nome: "Ana Souza",
       mensagem:
         "Produtos maravilhosos e entrega super rápida. Com certeza comprarei novamente.",
+      createdAt: new Date().toISOString(),
     },
     {
       nome: "Juliana Lima",
       mensagem:
         "A qualidade dos produtos superou minhas expectativas. Atendimento excelente.",
+      createdAt: new Date().toISOString(),
     },
     {
       nome: "Camila Oliveira",
       mensagem: "Site bonito, fácil de usar e produtos incríveis.",
+      createdAt: new Date().toISOString(),
     },
   ]);
 
   const handleAddReview = (review) => {
-    setReviews((prev) => [review, ...prev]);
+    const reviewWithDate = {
+      ...review,
+      createdAt: review.createdAt || new Date().toISOString(),
+    };
+
+    setReviews((prev) => [reviewWithDate, ...prev]);
   };
   return (
     <>

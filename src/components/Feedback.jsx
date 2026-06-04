@@ -12,6 +12,9 @@ function Feedback({ reviews = [] }) {
           <div className="feedback-card" key={idx}>
             <p>{`"${r.mensagem}"`}</p>
             <h4>{r.nome}</h4>
+            <small className="feedback-date">
+              {new Date(r.createdAt || Date.now()).toLocaleString("pt-BR")}
+            </small>
           </div>
         ))}
 
