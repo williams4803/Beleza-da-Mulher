@@ -12,35 +12,39 @@ import Footer from "./components/Footer";
 import "./styles/global.css";
 import "./styles/responsive.css";
 
+const generateId = () => `${Math.random().toString(36).slice(2)}`;
+
+const initialReviews = [
+  {
+    nome: "Ana Souza",
+    mensagem:
+      "Produtos maravilhosos e entrega super rápida. Com certeza comprarei novamente.",
+    createdAt: new Date().toISOString(),
+    id: generateId(),
+  },
+  {
+    nome: "Juliana Lima",
+    mensagem:
+      "A qualidade dos produtos superou minhas expectativas. Atendimento excelente.",
+    createdAt: new Date().toISOString(),
+    id: generateId(),
+  },
+  {
+    nome: "Camila Oliveira",
+    mensagem: "Site bonito, fácil de usar e produtos incríveis.",
+    createdAt: new Date().toISOString(),
+    id: generateId(),
+  },
+];
+
 function App() {
-  const [reviews, setReviews] = useState([
-    {
-      nome: "Ana Souza",
-      mensagem:
-        "Produtos maravilhosos e entrega super rápida. Com certeza comprarei novamente.",
-      createdAt: new Date().toISOString(),
-      id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
-    },
-    {
-      nome: "Juliana Lima",
-      mensagem:
-        "A qualidade dos produtos superou minhas expectativas. Atendimento excelente.",
-      createdAt: new Date().toISOString(),
-      id: `${Date.now() + 1}-${Math.random().toString(36).slice(2)}`,
-    },
-    {
-      nome: "Camila Oliveira",
-      mensagem: "Site bonito, fácil de usar e produtos incríveis.",
-      createdAt: new Date().toISOString(),
-      id: `${Date.now() + 2}-${Math.random().toString(36).slice(2)}`,
-    },
-  ]);
+  const [reviews, setReviews] = useState(initialReviews);
 
   const handleAddReview = (review) => {
     const reviewWithDate = {
       ...review,
       createdAt: review.createdAt || new Date().toISOString(),
-      id: review.id || `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+      id: review.id || generateId(),
     };
 
     setReviews((prev) => [reviewWithDate, ...prev]);
