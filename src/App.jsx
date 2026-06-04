@@ -41,6 +41,13 @@ function App() {
 
     setReviews((prev) => [reviewWithDate, ...prev]);
   };
+
+  const handleDeleteOldest = () => {
+    setReviews((prev) => {
+      if (!prev || prev.length === 0) return prev;
+      return prev.slice(0, prev.length - 1);
+    });
+  };
   return (
     <>
       <Header />
@@ -48,7 +55,7 @@ function App() {
       <Produtos />
        <Sobre />
       <Ofertas />
-      <Feedback reviews={reviews} />
+      <Feedback reviews={reviews} onDeleteOldest={handleDeleteOldest} />
       <Avaliacao onAddReview={handleAddReview} />
       <Whatsapp />
       <Footer />

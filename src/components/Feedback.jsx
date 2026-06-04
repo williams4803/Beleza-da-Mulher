@@ -1,12 +1,27 @@
 import "../styles/feedback.css";
 
-function Feedback({ reviews = [] }) {
+function Feedback({ reviews = [], onDeleteOldest }) {
+  const handleDelete = () => {
+    if (!onDeleteOldest) return;
+    if (reviews.length === 0) return;
+    if (window.confirm("Deseja realmente excluir a avaliação mais antiga?")) {
+      onDeleteOldest();
+    }
+  };
+
   return (
     <section className="feedback">
 
-      <h2>O que nossas clientes dizem</h2>
+      <div className="feedback-header">
+        <h2>O que nossas clientes dizem</h2>
+        <button className="delete-oldest" onClick={handleDelete}>
+          Excluir avaliação mais antiga
+        </button>
+      </div>
 
       <div className="feedback-container">
+
+        {reviews.length === 0 && <p>Sem avaliações ainda.</p>}
 
         {reviews.map((r, idx) => (
           <div className="feedback-card" key={idx}>
