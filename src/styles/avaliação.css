@@ -1,0 +1,49 @@
+.avaliacao{
+  padding:80px 10%;
+  text-align:center;
+  background:#fff;
+}
+
+.avaliacao h2{
+  color:#c95c86;
+  margin-bottom:15px;
+}
+
+.avaliacao p{
+  margin-bottom:30px;
+}
+
+.avaliacao form{
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.avaliacao input,
+.avaliacao textarea{
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
+}
+
+.avaliacao textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.avaliacao button{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#c95c86;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.avaliacao button:hover{
+  opacity:0.9;
+}
